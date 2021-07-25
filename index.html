@@ -72,10 +72,12 @@
     }
 
     async function getUserProfile() {
+      document.getElementById("statusMessage").append("test")
       const profile = await liff.getProfile()
+      document.getElementById("statusMessage").append("test2")
       document.getElementById("pictureUrl").src = profile.pictureUrl
       document.getElementById("userId").append(profile.userId)
-      document.getElementById("statusMessage").append(profile)
+      document.getElementById("statusMessage").append(profile.statusMessage)
       document.getElementById("displayName").append(profile.displayName)
     }
 
@@ -89,7 +91,6 @@
     }
 
     async function main() {
-      alert("")
       await liff.init({ liffId: "1656249175-3RKWbNQY" })
       getEnvironment()
       getUserProfile()
