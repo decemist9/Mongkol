@@ -51,6 +51,8 @@
     }
 
     async function scanCode() {
+      const result = await liff.scanCode()
+      document.getElementById("scanCode").append(result.value)
     }
 
     function openWindow() {
@@ -72,7 +74,7 @@
            "text": "Hello, here is the shop address $",
            "emojis": [
              {
-               "index": 26,
+               "index": 32,
                "productId": "5ac21e6c040ab15980c9b444",
                "emojiId": "036"
              }
