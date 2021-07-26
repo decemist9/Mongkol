@@ -115,32 +115,28 @@
       if (liff.getContext().type !== "none") {
         await liff.sendMessages([
           {
-            "type": "bubble",
-            "body": {
-              "type": "box",
-              "layout": "horizontal",
-              "contents": [
-                {
-                  "type": "image",
-                  "url": "https://miro.medium.com/max/1200/1*Wu4CVpHoiarVZQ1013_7rA.png",
-                  "size": "md"
-                },
-                {
-                  "type": "button",
-                  "style": "primary",
-                  "action": {
-                    "type": "uri",
+            "type": "carousel",
+            "column": [
+              {
+              "thumbnailImageUrl": "https://miro.medium.com/max/1200/1*Wu4CVpHoiarVZQ1013_7rA.png",
+              "title": "Go See Our Menu!",
+              "text": "Enjoy our drinks" 
+              }
+            ],
+            "actions": [
+              {
+                "type": "uri",
                     "label": "Go See Our Menu!",
                     "uri": "https://lineman.line.me/food-restaurant-list-liff/"
-                  }
+              }              
+            ],
+            "imageAspectRatio": "square"
                 }
               ]
+        )
+        alert("Message Sent")
             }
           }
-        ])
-        alert("Message Sent")
-      }
-     }
 
     function getContext() {
       document.getElementById("type").append(liff.getContext().type)
