@@ -30,8 +30,9 @@
   <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
   <p><a href="liff/path/?param=9">Link to Path</a></p>
 
-  <button id="btnMsg" onclick="sendMsg()">Send Message</button>
-  <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
+  <button id="btnMsg" onclick="sendMsg()">Send Shop Address</button>
+  <button id="btnMsg2" onclick="sendMsg2()">Send Menu information</button>
+  <button id="btnShare" onclick="shareMsg()">Share Receipts</button>
   <button onclick="openWindow()">Open Window</button>
   <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
   <button id="btnLogOut" onclick="logOut()">Log Out</button>
@@ -104,6 +105,37 @@
             "address": "999/9 Rama I Road, Bangkok, 10330",
             "latitude": 13.746944,
             "longitude": 100.539719
+          }
+        ])
+        alert("Message Sent")
+      }
+     }
+
+     async function sendMsg2() {
+      if (liff.getContext().type !== "none") {
+        await liff.sendMessages([
+          {
+            "type": "bubble",
+            "body": {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": "https://miro.medium.com/max/1200/1*Wu4CVpHoiarVZQ1013_7rA.png",
+                  "size": "md"
+                },
+                {
+                  "type": "button",
+                  "style": "primary",
+                  "action": {
+                    "type": "uri",
+                    "label": "Go See Our Menu!",
+                    "uri": "https://lineman.line.me/food-restaurant-list-liff/"
+                  }
+                }
+              ]
+            }
           }
         ])
         alert("Message Sent")
