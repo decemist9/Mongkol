@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
 <body>
-  <p id="os"><b>OS7:</b> </p>
+  <p id="os"><b>OS8:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
   <p id="lineVersion"><b>Line Version:</b> </p>
@@ -112,9 +112,11 @@
      }
 
      async function sendMsg2() {
-      if (liff.getContext().type !== "none") {
         await liff.sendMessages([
           {
+          "type": "template",
+          "altText": "Not Available",
+          "template": {
             "type": "buttons",
             "thumbnailImageUrl": "https://miro.medium.com/max/1200/1*Wu4CVpHoiarVZQ1013_7rA.png",
             "imageAspectRatio": "square",
@@ -128,11 +130,11 @@
               }              
             ]
           }
+        }
         ]
         )
         alert("Message Sent")
       }
-     }
 
     function getContext() {
       document.getElementById("type").append(liff.getContext().type)
