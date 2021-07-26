@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
 <body>
-  <p id="os"><b>OS5:</b> </p>
+  <p id="os"><b>OS6:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
   <p id="lineVersion"><b>Line Version:</b> </p>
@@ -116,19 +116,19 @@
         await liff.sendMessages([
           {
             "type": "carousel",
-            "column": [
+            "columns": [
               {
               "thumbnailImageUrl": "https://miro.medium.com/max/1200/1*Wu4CVpHoiarVZQ1013_7rA.png",
               "title": "Go See Our Menu!",
-              "text": "Enjoy our drinks" 
-              }
-            ],
-            "actions": [
+              "text": "Enjoy our drinks",
+              "actions": [
               {
                 "type": "uri",
                     "label": "Go See Our Menu!",
                     "uri": "https://lineman.line.me/food-restaurant-list-liff/"
               }              
+            ]
+              }
             ],
             "imageAspectRatio": "square"
                 }
