@@ -11,7 +11,7 @@
 <body>
   <section>
     <h2>LIFF getEnvironment</h2>
-    <p id="os"><b>OS1:</b> </p>
+    <p id="os"><b>OS2:</b> </p>
     <p id="language"><b>Language:</b> </p>
     <p id="version"><b>LIFF Version:</b> </p>
     <p id="lineVersion"><b>Line Version:</b> </p>
@@ -162,42 +162,25 @@
       if (liff.getContext().type !== "none") {
         await liff.sendMessages([
           {
-            "type": "template",
-            "altText": "this is a image carousel template",
-            "template": {
-              "type": "confirm",
-              "text": "Confirm?",
-              "actions": [
-                {
-                  "type": "message",
-                  "label": "Yes",
-                  "text": "yes"
-                },
-                {
-                  "type": "message",
-                  "label": "No",
-                  "text": "no"
-                }
-              ]
+            "type": "imagemap",
+            "baseUrl": "https://anakjajan.files.wordpress.com/2015/12/dscf9697.jpg?w=474&h=316",
+            "altText": "Update",
+            "baseSize": {
+              "width": "500",
+              "height": "400"
+            },
+            "action": {
+              "type": "uri",
+              "label": "hi",
+              "linkUri": "https://line.me/ti/p/153pqqsb",
+              "area": {
+                "x": 474,
+                "y": 316,
+                "width": 474,
+                "height": 316
+              }
             }
           }
-          // {
-          //   "type": "template",
-          //   "altText": "Not Available",
-          //   "template": {
-          //     "type": "image_carousel",
-          //     "columns": [
-          //       {
-          //         "imageUrl": "https://anakjajan.files.wordpress.com/2015/12/dscf9697.jpg?w=474&h=316",
-          //         "action": {
-          //           "type": "message",
-          //           "label": "Order this!",
-          //           "text": "1 Cony Soft serve please"
-          //         }
-          //       }
-          //     ]
-          //     }
-          //   }
         ]
         ).catch((code, message) => { alert(code); alert(message) })
       }
