@@ -36,6 +36,10 @@
     <h2>LIFF isLoggedIn</h2>
     <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
   </section>
+  <section>
+    <h2>LIFF URL</h2>
+    <p id="permanentLink"><b>createUrl:</b> </p>
+  </section>
 
   <p id="friendship"><b>isFriendship:</b> </p>
   <p id="scanCode"><b>Code:</b> </p>
@@ -50,9 +54,10 @@
   </section>
   <section>
     <h2>LIFF shareTargetPicker</h2>
-    <button id="btnShare" onclick="shareMsg()">Share Receipts</button>x
+    <button id="btnShare" onclick="shareMsg()">Share Receipts</button>
   </section>
   <section>
+    <h2>LIFF logout and close</h2>
     <button id="btnLogOut" onclick="logOut()">Log Out</button>
     <button id="btnClose" onclick="closed()">Close</button>
   </section>
@@ -90,6 +95,10 @@
 
     function openWindow() {
       document.getElementById("openWindow").append(liff.openWindow())
+    }
+
+    function permanentLink() {
+      document.getElementById("permanentLink").append(liff.permanentLink.createUrl())
     }
 
     async function getFriendship() {
