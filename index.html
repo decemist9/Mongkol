@@ -97,8 +97,8 @@
       document.getElementById("openWindow").append(liff.openWindow())
     }
 
-    function permanentLink() {
-      liff.permanentLink.setExtraQueryParam('user_tracking_id=8888')
+    function permanentLink(userId) {
+      liff.permanentLink.setExtraQueryParam('user_tracking_id='+userId)
       document.getElementById("permanentLink").append(liff.permanentLink.createUrl())
     }
 
@@ -183,6 +183,7 @@
       document.getElementById("statusMessage").append(profile.statusMessage)
       document.getElementById("displayName").append(profile.displayName)
       document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
+      permanentLink(profile.userId)
     }
 
     function getEnvironment() {
@@ -203,7 +204,7 @@
       getEnvironment()
       getFriendship()
       createUniversalLink()
-      permanentLink()
+      
       } else {
         liff.login()
       }
