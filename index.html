@@ -171,18 +171,19 @@
                   "imageUrl": "https://anakjajan.files.wordpress.com/2015/12/dscf9697.jpg?w=474&h=316",
                   "action": {
                     "type": "message",
-                    "label":"Order this!",
+                    "label": "Order this!",
                     "text": "1 Cony Soft serve please"
                   }
                 }
               ]
-        
-          }
+              }
+            }
         ]
-        ).catch(err => {alert(err)})
+        ).catch(err => { alert(err) })
       }
       alert("Message Sent")
     }
+    
 
     function getContext() {
       document.getElementById("type").append(liff.getContext().type)
