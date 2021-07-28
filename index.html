@@ -52,11 +52,11 @@
   <section>
     <h2>LIFF sendMessages</h2>
     <button id="btnMsg" onclick="sendMsg()">Send Shop Address</button>
-    <button id="btnMsg2" onclick="sendMsg2()">Send Menu information</button>
+    <button id="btnMsg2" onclick="sendMsg2()">Reserve Table</button>
   </section>
   <section>
     <h2>LIFF shareTargetPicker</h2>
-    <button id="btnShare" onclick="shareMsg()">Share Receipts</button>
+    <button id="btnShare" onclick="shareMsg()">Share Menu</button>
   </section>
   <section>
     <h2>LIFF logout and close</h2>
@@ -75,8 +75,22 @@
     async function shareMsg() {
        if(liff.isApiAvailable("shareTargetPicker")) {
         await liff.shareTargetPicker([ {
-        "type": "text",
-        "text": "Shared by TargetPicker"
+          "type": "template",
+          "altText": "Not Available",
+          "template": {
+            "type": "buttons",
+            "thumbnailImageUrl": "https://miro.medium.com/max/1200/1*Wu4CVpHoiarVZQ1013_7rA.png",
+            "imageAspectRatio": "square",
+            "title": "Click to see our Menu!",
+            "text": "Enjoy our drinks",
+            "actions": [
+              {
+                "type": "uri",
+                    "label": "Menu",
+                    "uri": "https://lineman.line.me/food-restaurant-list-liff/"
+              }              
+            ]
+          }
       }  
       ])
       }
@@ -128,14 +142,7 @@
           },
           {
            "type": "text",
-           "text": "$ Hello, here is the shop address",
-           "emojis": [
-             {
-               "index": 0,
-               "productId": "5ac21e6c040ab15980c9b444",
-               "emojiId": "036"
-             }
-           ]
+           "text": "Hello, here is the shop address",
           },
           {
             "type": "location",
@@ -156,15 +163,19 @@
           "altText": "Not Available",
           "template": {
             "type": "buttons",
-            "thumbnailImageUrl": "https://miro.medium.com/max/1200/1*Wu4CVpHoiarVZQ1013_7rA.png",
+            "thumbnailImageUrl": "https://anakjajan.files.wordpress.com/2015/12/dscf9697.jpg?w=474&h=316",
             "imageAspectRatio": "square",
-            "title": "Go See Our Menu!",
-            "text": "Enjoy our drinks",
+            "title": "Reserve the table",
+            "text": "No need to wait in line",
             "actions": [
               {
-                "type": "uri",
-                    "label": "Go See Our Menu!",
-                    "uri": "https://lineman.line.me/food-restaurant-list-liff/"
+                "type": "datetimepicker",
+                    "label": "Reserve here",
+                    "data": "datetime",
+                    "mode": "datetime",
+                    "initial": "2021-07-30t00:00",
+                    "min": "2021-07-30t00:00",
+                    "max": "2021-08-30t00:00"
               }              
             ]
           }
