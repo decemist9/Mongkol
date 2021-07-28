@@ -11,7 +11,7 @@
 <body>
   <section>
     <h2>LIFF getEnvironment</h2>
-    <p id="os"><b>OS2:</b> </p>
+    <p id="os"><b>OS:</b> </p>
     <p id="language"><b>Language:</b> </p>
     <p id="version"><b>LIFF Version:</b> </p>
     <p id="lineVersion"><b>Line Version:</b> </p>
@@ -54,7 +54,6 @@
   <section>
     <h2>LIFF sendMessages</h2>
     <button id="btnMsg" onclick="sendMsg()">Send Shop Address</button>
-    <button id="btnMsg2" onclick="sendMsg2()">Reserve Table</button>
   </section>
   <section>
     <h2>LIFF shareTargetPicker</h2>
@@ -127,11 +126,11 @@
     async function getFriendship() {
       const friend = await liff.getFriendship()
       document.getElementById("friendship").append(friend.friendFlag)
-      // if (!friend.friendFlag) {
-      //   if (confirm("You has not add the account, would you like to add now?")) {
-      //     window.location = "https://line.me/ti/p/153pqqsb"
-      //   }
-      // }
+      if (!friend.friendFlag) {
+        if (confirm("You has not add the account, would you like to add now?")) {
+          window.location = "https://line.me/ti/p/153pqqsb"
+        }
+      }
     }
 
     async function sendMsg() {
@@ -157,36 +156,6 @@
         alert("Message Sent")
       }
     }
-
-    async function sendMsg2() {
-      if (liff.getContext().type !== "none") {
-        await liff.sendMessages([
-          {
-            "type": "imagemap",
-            "baseUrl": "https://anakjajan.files.wordpress.com/2015/12/dscf9697.jpg?w=474&h=316",
-            "altText": "Update",
-            "baseSize": {
-              "width": "500",
-              "height": "400"
-            },
-            "action": {
-              "type": "uri",
-              "label": "hi",
-              "linkUri": "https://line.me/ti/p/153pqqsb",
-              "area": {
-                "x": 474,
-                "y": 316,
-                "width": 474,
-                "height": 316
-              }
-            }
-          }
-        ]
-        ).catch((code, message) => { alert(code); alert(message) })
-      }
-      alert("Message Sent")
-    }
-
 
     function getContext() {
       document.getElementById("type").append(liff.getContext().type)
