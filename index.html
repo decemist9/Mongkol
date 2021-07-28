@@ -9,7 +9,7 @@
 <body>
   <section>
     <h2>LIFF getEnvironment</h2>  
-    <p id="os"><b>OS8:</b> </p>
+    <p id="os"><b>OS:</b> </p>
     <p id="language"><b>Language:</b> </p>
     <p id="version"><b>Version:</b> </p>
     <p id="lineVersion"><b>Line Version:</b> </p>
@@ -38,14 +38,16 @@
   </section>
   <section>
     <h2>LIFF URL</h2>
+    <h3>createUrl, setExtraQueryParam and openWindow</h3>
     <p id="permanentLink"><b>createUrl:</b> </p>
+    <button onclick="openWindow()">Open Window</button>
   </section>
-
-  <p id="friendship"><b>isFriendship:</b> </p>
-  <p id="scanCode"><b>Code:</b> </p>
-  <p id="universalLink1"><b>Universal Link:</b> </p>
-  <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
-  <p><a href="liff/path/?param=9">Link to Path</a></p>
+  <section>
+    <h2>LIFF getFriendship/h2>
+      <p id="friendship"><b>isFriendship:</b> </p>
+  </section>
+  
+  <!-- <p id="scanCode"><b>Code:</b> </p> -->
 
   <section>
     <h2>LIFF sendMessages</h2>
@@ -61,7 +63,7 @@
     <button id="btnLogOut" onclick="logOut()">Log Out</button>
     <button id="btnClose" onclick="closed()">Close</button>
   </section>
-  <button onclick="openWindow()">Open Window</button>
+  
   <!-- <button id="btnScanCode" onclick="scanCode()">Scan Code</button> -->
   
 
@@ -71,12 +73,14 @@
     }
 
     async function shareMsg() {
-      await liff.shareTargetPicker([
-      {
+       if(liff.isApiAvailable("shareTargetPicker")) {
+        await liff.shareTargetPicker([ {
         "type": "text",
         "text": "Shared by TargetPicker"
       }  
       ])
+      }
+      else alert("Please update your app version")
     }
 
     function logOut() {
@@ -94,22 +98,24 @@
     // }
 
     function openWindow() {
-      document.getElementById("openWindow").append(liff.openWindow())
+      liff.openWindow({
+        "url": "https://lineman.line.me/food/"
+      })
     }
 
     function permanentLink(userId) {
-      liff.permanentLink.setExtraQueryParam('user_tracking_id='+userId)
+      liff.permanentLink.setExtraQueryParam('user_id='+userId)
       document.getElementById("permanentLink").append(liff.permanentLink.createUrl())
     }
 
     async function getFriendship() {
       const friend = await liff.getFriendship()
       document.getElementById("friendship").append(friend.friendFlag)
-      if (!friend.friendFlag) {
-        if (confirm("You has not add the account, would you like to add now?")) {
-          window.location = "https://line.me/ti/p/153pqqsb"
-        }
-      }
+      // if (!friend.friendFlag) {
+      //   if (confirm("You has not add the account, would you like to add now?")) {
+      //     window.location = "https://line.me/ti/p/153pqqsb"
+      //   }
+      // }
     }
 
     async function sendMsg() {
@@ -204,7 +210,6 @@
       getEnvironment()
       getFriendship()
       createUniversalLink()
-      
       } else {
         liff.login()
       }
