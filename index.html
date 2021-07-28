@@ -11,7 +11,7 @@
 <body>
   <section>
     <h2>LIFF getEnvironment</h2>
-    <p id="os"><b>OS11:</b> </p>
+    <p id="os"><b>OS10:</b> </p>
     <p id="language"><b>Language:</b> </p>
     <p id="version"><b>LIFF Version:</b> </p>
     <p id="lineVersion"><b>Line Version:</b> </p>
@@ -161,24 +161,31 @@
     async function sendMsg2() {
       if (liff.getContext().type !== "none") {
         await liff.sendMessages([
-        {
-          "type": "template",
-          "altText": "Not Available",
-          "template": {
-            "type": "buttons",
-            "thumbnailImageUrl": "https://miro.medium.com/max/1200/1*Wu4CVpHoiarVZQ1013_7rA.png",
-            "imageAspectRatio": "square",
-            "title": "Click to see our Menu!",
-            "text": "Enjoy our drinks",
-            "actions": [
-              {
-                "type": "uri",
-                "label": "Menu",
-                "uri": "https://lineman.line.me/food-restaurant-list-liff/"
-              }
-            ]
+          {
+            "type": "template",
+            "altText": "this is a image carousel template",
+            "template": {
+              "type": "image_carousel",
+              "columns": [
+                {
+                  "imageUrl": "https://anakjajan.files.wordpress.com/2015/12/dscf9697.jpg?w=474&h=316",
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": "https://anakjajan.files.wordpress.com/2015/12/dscf9697.jpg?w=474&h=316",
+                  "action": {
+                    "type": "uri",
+                    "label": "View detail",
+                    "uri": "http://google.com/"
+                  }
+                }
+              ]
+            }
           }
-        }
           // {
           //   "type": "template",
           //   "altText": "Not Available",
@@ -197,7 +204,7 @@
           //     }
           //   }
         ]
-        ).catch(err => { alert(err) })
+        ).catch((code,message) => { alert(code);alert(message) })
       }
       alert("Message Sent")
     }
