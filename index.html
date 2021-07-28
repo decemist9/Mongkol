@@ -62,7 +62,7 @@
     <button id="btnClose" onclick="closed()">Close</button>
   </section>
   <button onclick="openWindow()">Open Window</button>
-  <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
+  <!-- <button id="btnScanCode" onclick="scanCode()">Scan Code</button> -->
   
 
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
@@ -88,16 +88,17 @@
       liff.closeWindow()
     }
 
-    async function scanCode() {
-      const result = await liff.scanCode()
-      document.getElementById("scanCode").append(result.value)
-    }
+    // async function scanCode() {
+    //   const result = await liff.scanCode()
+    //   document.getElementById("scanCode").append(result.value)
+    // }
 
     function openWindow() {
       document.getElementById("openWindow").append(liff.openWindow())
     }
 
     function permanentLink() {
+      liff.permanentLink.setExtraQueryParam('user_tracking_id=8888')
       document.getElementById("permanentLink").append(liff.permanentLink.createUrl())
     }
 
