@@ -54,6 +54,7 @@
   <section>
     <h2>LIFF sendMessages</h2>
     <button id="btnMsg" onclick="sendMsg()">Send Shop Address</button>
+    <button id="btnFlexMsg" onclick="sendMsg2()">Send Flex</button>
   </section>
   <section>
     <h2>LIFF shareTargetPicker</h2>
@@ -156,6 +157,272 @@
         alert("Message Sent")
       }
     }
+
+    async function sendMsg2() {
+      if (liff.getContext().type !== "none") {
+        await liff.sendMessages([{
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "size": "giga",
+      "hero": {
+        "type": "image",
+        "url": "https://krungsrimarket.cjdataservice.com/uploads/campaignpages/campaignpage_banner_t_a28.jpg",
+        "size": "full",
+        "aspectMode": "cover",
+        "aspectRatio": "800:610"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "Honda CBR500",
+            "weight": "bold",
+            "size": "lg",
+            "wrap": true,
+            "align": "center"
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "หรือดาวน์เริ่ม 10,990 บาท* ผ่อนสูงสุด 60 เดือน",
+                "size": "xs",
+                "align": "center",
+                "gravity": "center"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "baseline",
+                "spacing": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "สนใจรุ่นนี้ สมัครออนไลน์ได้เลย คลิก!",
+                    "size": "md",
+                    "align": "center",
+                    "color": "#f40001",
+                    "gravity": "center"
+                  }
+                ],
+                "paddingAll": "md",
+                "paddingTop": "md",
+                "offsetTop": "none",
+                "paddingBottom": "md",
+                "paddingStart": "md",
+                "paddingEnd": "md",
+                "alignItems": "center",
+                "action": {
+                  "type": "uri",
+                  "label": "action",
+                  "uri": "https://kautolink.com/JBLh7D",
+                  "altUri": {
+                    "desktop": "https://kautolink.com/JBLh7D"
+                  }
+                }
+              }
+            ],
+            "borderWidth": "none",
+            "cornerRadius": "md",
+            "justifyContent": "center",
+            "alignItems": "center",
+            "offsetTop": "none",
+            "offsetBottom": "none",
+            "offsetStart": "none",
+            "offsetEnd": "none",
+            "paddingAll": "none",
+            "paddingBottom": "none",
+            "spacing": "none",
+            "margin": "none"
+          }
+        ],
+        "spacing": "sm",
+        "paddingAll": "13px"
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "giga",
+      "hero": {
+        "type": "image",
+        "url": "https://krungsrimarket.cjdataservice.com/uploads/campaignpages/campaignpage_banner_t_f85.jpg",
+        "size": "full",
+        "aspectMode": "fit",
+        "aspectRatio": "800:610"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "Yamaha R7",
+            "weight": "bold",
+            "size": "xl",
+            "wrap": true,
+            "align": "center"
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "หรือดาวน์เริ่ม 0 บาท* ผ่อนสูงสุด 60 เดือน",
+                "size": "xs",
+                "align": "center",
+                "gravity": "center"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "baseline",
+                "spacing": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "สนใจรุ่นนี้ สมัครออนไลน์ได้เลย คลิก!",
+                    "color": "#f40001",
+                    "size": "md",
+                    "align": "center",
+                    "gravity": "center"
+                  }
+                ],
+                "action": {
+                  "type": "uri",
+                  "label": "action",
+                  "uri": "https://kautolink.com/7b7hIw",
+                  "altUri": {
+                    "desktop": "https://kautolink.com/7b7hIw"
+                  }
+                },
+                "paddingAll": "md",
+                "paddingTop": "md",
+                "paddingBottom": "md",
+                "paddingStart": "md",
+                "paddingEnd": "md",
+                "cornerRadius": "md"
+              }
+            ],
+            "spacing": "none",
+            "margin": "none",
+            "borderWidth": "none",
+            "cornerRadius": "md",
+            "justifyContent": "center",
+            "alignItems": "center",
+            "offsetTop": "none",
+            "offsetBottom": "none",
+            "offsetStart": "none",
+            "offsetEnd": "none",
+            "paddingAll": "none",
+            "paddingBottom": "none"
+          }
+        ],
+        "spacing": "sm",
+        "paddingAll": "13px"
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "giga",
+      "hero": {
+        "type": "image",
+        "url": "https://krungsrimarket.cjdataservice.com/uploads/campaignpages/campaignpage_banner_t_79a.jpg",
+        "size": "full",
+        "aspectMode": "cover",
+        "aspectRatio": "800:610"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "Triumph Trident 660",
+            "weight": "bold",
+            "size": "xl",
+            "align": "center",
+            "gravity": "center"
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "หรือดาวน์เริ่ม 15,650 บาท* ผ่อนสูงสุด 60 เดือน",
+                "size": "xs",
+                "align": "center",
+                "gravity": "center"
+              }
+            ],
+            "alignItems": "center"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "baseline",
+                "spacing": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "สนใจรุ่นนี้ สมัครออนไลน์ได้เลย คลิก!",
+                    "color": "#f40001",
+                    "size": "md",
+                    "align": "center",
+                    "gravity": "center"
+                  }
+                ],
+                "paddingAll": "md",
+                "paddingTop": "md",
+                "paddingBottom": "md",
+                "paddingStart": "md",
+                "paddingEnd": "md",
+                "cornerRadius": "md",
+                "action": {
+                  "type": "uri",
+                  "label": "action",
+                  "uri": "https://kautolink.com/d6A8jQ",
+                  "altUri": {
+                    "desktop": "https://kautolink.com/d6A8jQ"
+                  }
+                }
+              }
+            ],
+            "spacing": "none",
+            "margin": "none"
+          }
+        ],
+        "spacing": "sm",
+        "paddingAll": "13px"
+      }
+    }
+  ]
+}  
+          ]
+          )
+          }
+        }
+
 
     function getContext() {
       document.getElementById("type").append(liff.getContext().type)
